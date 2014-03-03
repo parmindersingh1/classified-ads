@@ -1,0 +1,41 @@
+.kk_display {
+  background-color: white;
+  .element {
+    @include border-radius($kk-border-radius);
+    border: $kk-border;
+    border-bottom: 0px;
+  }
+
+  .element_inner {
+    @include box-shadow($kk-element-inner-shadow);
+  }
+
+  .title {
+    @include background($kk-title-background);
+    text-align: center;
+
+    h1, h2, h3, h4, h5, h6 {
+      padding: $kk-element-padding;
+      color: white;
+    }
+  }
+
+  .title_black {
+    h1, h2, h3, h4, h5, h6 {
+      color: black;
+    }
+  }
+
+  .element:first-child {
+    @include border-radius($kk-border-radius-first-element);
+  }
+
+  .element:last-child {
+    @include border-radius($kk-border-radius-last-element);
+    border: $kk-border;
+  }
+
+  .element_padded {
+    padding: $kk-element-padding;
+  }
+}

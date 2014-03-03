@@ -1,0 +1,15 @@
+<div class="item_statistics element_padded">
+  <span class="views">
+    <%= content_tag :span, rel: "tooltip-bottom", title: "#{t('saw_this_ad', number_of_persons: item.views)}" do %>
+      <%= icon_for("stats-view") %>
+      <h4><%= item.views %></h4>
+    <% end %>
+  </span>
+
+  <span class="messages">
+    <%= content_tag :span, rel: "tooltip-bottom", title: "#{t('send_message_this_ad', number_of_persons: 1)}" do %>
+      <%= icon_for("stats-message") %>
+      <h4></h4>
+    <% end %>
+  </span>
+</div>

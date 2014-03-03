@@ -1,0 +1,14 @@
+419 : user
+1605 : stats-message
+994 : message
+3421 : upload-photo
+2324 : likeus
+2524 : sale
+946 : iteminfo
+910 : iteminfo
+1009 : book
+1281 : automobile
+3146 : electronic
+4438 : electronic
+3966 : realestate
+3380 : unreadmessage

@@ -1,0 +1,11 @@
+en:
+  my_account: "Account"
+  profile: "Profile"
+  sign_out: "Sign Out"
+  sign_in: "Sign In"
+  my_items: "Items"
+  my_messages: "Messages"
+  settings: "Settings"
+  you_have_no_messages: "Currently, you have no messages."
+  username: "Username or email"
+  password: "Password"

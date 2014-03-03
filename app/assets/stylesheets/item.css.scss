@@ -1,0 +1,327 @@
+.item-form {
+  @media (min-width: 768px){
+    #category, #price {
+      width: 48%;
+    }
+    #category{
+      float: left;
+    }
+    #price {
+      float: right;
+    }
+  }
+
+  .images {
+    input[type="file"] {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .btn-group {
+    text-align: center;
+    input {
+      float: none;
+    }
+  }
+
+  #description {
+    margin-bottom: 0px;
+
+    textarea {
+      margin-bottom: 0;
+      resize: vertical;
+      @include border-radius(3px 3px 0px 0px);
+    }
+  }
+
+  .image.thumbnail {
+    width: 100%;
+    @include box-sizing(border-box);
+    @include border-radius(0);
+    border-top: 0;
+  }
+
+  #fileupload {
+    table {
+      margin: 0;
+    }
+  }
+
+  .fileinput-button {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 9px;
+    margin-top: 0;
+    border-top:0;
+    text-align: center;
+    @include border-radius(0px 0px 3px 3px);
+    @include box-sizing(border-box);
+    span{
+      vertical-align: bottom;
+      font-weight: bold;
+    }
+    input {
+      right: -300px;
+      border-width: 0 0 150px 1200px;
+      height: 50px;
+    }
+  }
+
+}
+
+.items_container {
+  .item-link {
+    @include transition-property(all);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(linear);
+    -webkit-transform: translateZ(0);
+    position: relative;
+    @include border-radius(5px);
+    border: 1px solid transparent;
+
+    i {
+      top: -3px;
+      left: -3px;
+      z-index: 1;
+    }
+  }
+
+  .item-link:hover {
+    cursor: pointer;
+    @include box-shadow(0px 0px 12px 0.3px rgba(1,1,1,0.2));
+    border: 1px solid #c3c3c3;
+  }
+
+  .item, .list_title {
+    background-color: white;
+    @include box-sizing(border-box);
+    @include border-radius(0px 0px 0px 0px);
+    @include box-shadow(rgba(255,255,255,0.1) 0 1px 0, rgba(0, 0, 0, 0.1) 1px 1px 9px 0px inset);
+    padding: 20px;
+    border: 1px solid #D4D4D4;
+    border-bottom: 0px;
+
+    &:hover {
+      background-color: #fcfcfc;
+    }
+
+    .img {
+      @extend .thumbnail;
+      background-color: white;
+    }
+
+    .title_below_image {
+      display: none;
+    }
+
+    .main_info {
+      @media (min-width: 768px) {
+        height: 119px;
+      }
+
+      @media (min-width: 980px) {
+        height: 130px;
+      }
+
+      .title, .description, .address {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .title, .address {
+        white-space: nowrap;
+      }
+
+      .seller {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        position: relative;
+        .address {
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+        }
+      }
+    }
+
+    .extra_info {
+      @media (min-width: 768px) {
+        height: 119px;
+      }
+
+      @media (min-width: 980px) {
+        height: 130px;
+      }
+
+      .votes_container {
+        text-align: center;
+      }
+
+      @media (max-width: 767px) {
+        .votes_container {
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .votes_container {
+          margin-bottom: 40px;
+        }
+      }
+
+      .votes {
+        @extend .progress;
+        @extend .progress-success;
+
+        height: 8px;
+        @include background(linear-gradient(top, #f00, #d00));
+        margin-bottom: 10px;
+
+        .up_vs_down {
+          @extend .bar;
+        }
+      }
+
+      .vote_buttons {
+        @extend .btn-group;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .up_votes, .down_votes {
+        display: none;
+      }
+
+      .price {
+        text-align: center;
+      }
+
+      .social_buttons {
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        position: relative;
+        .social_buttons {
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+        }
+      }
+ 
+    }
+
+  }
+
+  .item-link:first-child .item {
+    @include border-top-radius(5px);
+  }
+
+  .item-link:last-child .item {
+    @include border-bottom-radius(5px 5px);
+    border-bottom: 1px solid #D4D4D4;
+  }
+}
+
+.carousel {
+  margin-bottom: 0px;
+
+  .carousel-inner {
+    background-color: white;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.user_item_list {
+  #no_sale, #no_message {
+    display: none;
+  }
+
+  .item {
+    overflow: hidden;
+
+    .title {
+      h1, h2, h3, h4, h5, h6 {
+        background-color: #3498D7;
+        cursor: pointer;
+      }
+    }
+
+    .item_controls, .item_statistics {
+      border-bottom: $nice-border;
+      text-align: center;
+
+      .btn {
+        margin: 10px;
+      }
+    }
+
+    .controls {
+      float: right;
+    }
+  }
+}
+
+.item_statistics {
+    text-align: center;
+
+    h1, h2, h3, h4, h5, h6 {
+      display: inline;
+    }
+
+    span {
+      margin: 0px 20px;
+      display: inline-block;
+      cursor: default;
+    }
+}
+
+.message {
+  form {
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  .controls {
+    padding: 3px 3px;
+
+    .text {
+      width: 100%;
+      margin: 0;
+      display: block;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    textarea {
+      overflow: hidden;
+    }
+  }
+}
+
+.btn-bottom-right {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.items_container.images_only { text-align: center; }
+.items_container.images_only { .main_info, .extra_info { display: none; } }
+.items_container.images_only { .item-link, .item { display: inline-block; } .item { padding: 10px; @include border-radius(5px); border: 1px solid #d4d4d4; } .img { margin-left: 0px; width: 280px; height: 130px; } }
+.items_container.images_only { .item-link { margin: 4px; } }
+.items_container.images_only { .title_below_image { display: block; clear: both; width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } }
+
+#page_item_show { .description { min-height: 100px; } }
+#page_item_show { .title { position: relative; text-align: center; h3 { display: inline-block; } .btn-group { position: absolute; top: 10px; right: 12px; } } }

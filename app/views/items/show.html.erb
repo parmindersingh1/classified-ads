@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<div id="page_item_show" class="row item_show">
+  <div class="kk_display span12">
+
+    <div class="element title">
+      <h3><%= @item.title %></h3>
+      <div class="btn-group">
+        <% if user_signed_in? %>
+          <%= link_to "#{icon_for('caution')} #{t 'report_this_item'}".html_safe, "#", remote:true, class: "btn", method: :post %>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @item.images.size >= 1 %>
+      <div id="images" class="element element_padded carousel slide">
+          <div class="carousel-inner">
+            <% @item.images.each_with_index do |i, index| %>
+              <div class="item <%= "active" if index == 0 %>">
+                <%= image_tag i.image.url(:medium) %>
+              </div>
+            <% end %>
+          </div>
+
+          <% if @item.images.size > 1 %>
+            <a class="carousel-control left" href="#images" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#images" data-slide="next">&rsaquo;</a>
+          <% end %>
+      </div>
+    <% end %>
+
+    <div class="element element_padded description">
+      <%= @item.description %>
+    </div>
+
+    <div class="element element_padded message">
+      <% if user_signed_in? %>
+        <%= form_tag messages_path, remote: true, method: :post, class: "form-vertical row-fluid" do |f| %>
+          <%= hidden_field_tag :item_id, @item.friendly_id %>
+          <%= text_area_tag :text, '', label: false, class: "span12", placeholder: "#{t('write_message')}" %>
+          <%= submit_tag :submit, class: "btn btn-primary btn-bottom-right", value: "#{t('send_message')}" %>
+        <% end %>
+      <% else %>
+        <h4><%= render "users/navbar" %><%= t 'sign_in_to_send_message' %>!</h4>
+      <% end %>
+  </div>
+
+  <div class="element element_padded">
+    <%= gmaps(map_options: { container_class: "map_container", id: "map", class: "gmaps4rails_map", detect_location: true, auto_zoom: false, zoom: 14}, markers: { data: @json } ) %>
+    <% #gmaps(map_options: { provider: "openlayers", id: "map", class: "gmaps4rails_map", zoom: 14}, markers: { data: @json } ) %>
+  </div>
+
+  </div>
+</div>

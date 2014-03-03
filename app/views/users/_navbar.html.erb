@@ -1,0 +1,42 @@
+<% if user_signed_in? %>
+  <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+    <%= icon_for("user") %> <%= t('my_account') %>
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to user_profile_path do %>
+        <%= icon_for("profile") %>
+        <%= t('profile') %>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to my_items_path do %>
+        <%= icon_for("items") %>
+        <%= t('my_items') %>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to messages_path do %>
+        <%= icon_for("messages") %>
+        <%= t('my_messages') %>
+      <% end %>
+    </li>
+
+    <li class="divider"></li>
+    <li>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <%= icon_for("sign-out") %>
+        <%= t('sign_out') %>
+      <% end %>
+    </li>
+  </ul>
+<% else %>
+  <%= link_to new_user_session_path, class: "btn" do %>
+    <%= icon_for("user") %>
+    <%= t('sign_in') %>
+  <% end %>
+<% end %>
+

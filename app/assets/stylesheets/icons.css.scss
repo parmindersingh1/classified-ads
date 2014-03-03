@@ -1,0 +1,30 @@
+$icon-sprite-dimensions: true;
+$icon-spacing: 2px;
+@import "icon/*.png";
+/**/
+@include all-icon-sprites;
+
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.icon-new-message {
+  opacity: 1 !important;
+}
+
+[class^="icon-ribbon-"], [class*=" icon-ribbon-"] {
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  pointer-events: none;
+}
+
+.icon-unreadmessage {
+  float: right;
+}
+
+
+// don't ever remove what's after this line!
+// 0398750375f254b6f 

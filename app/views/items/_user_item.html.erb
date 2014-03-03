@@ -1,0 +1,54 @@
+<div class="element item">
+  <a class="title" data-toggle="collapse" data-target="#<%= user_item.id%>">
+    <h4 class="element_padded"><%= "#{t('item')} ##{user_item.id}: #{user_item.title}" %>
+    </h4>
+  </a>
+
+  <div class="collapse" id="<%= user_item.id %>">
+    <div class="item_details element_inner">
+      <div class="item_controls element_padded">
+        <%= link_to t('show_item'), user_item, class: "btn btn-primary" %>
+        <%= link_to t('edit_item'), edit_item_path(user_item.id), class: "btn btn-primary" %>
+        <%= link_to t('already_sold_item'), user_item, method: :delete, class: "btn btn-danger delete_item", "data-type" => :json, confirm: "Are you sure?", remote: true %>
+      </div>
+
+      <%= render "items/stats" %>
+
+      <div class="messages element_padded">
+
+        <div class="accordion" id="from_<%= user_item.id %>">
+          <% user_messages = user_item.messages.group_by do |m| %>
+            <% case m.from_id %>
+            <%    when current_user.id %>
+            <%      m.to.username %>
+            <%    else %>
+            <%      m.from.username %>
+            <%    end %>
+          <% end %>
+          <% user_messages.each do |f, m| %>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#from_<%= user_item.id %>" href="#message_<%= m.first.id %>">
+                  <b><%= "Message from #{f}" %></b>
+                </a>
+              </div>
+
+              <div id="message_<%= m.first.id %>" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <% m.each do |n| %>
+                    <% if n.from_id == current_user.id %>
+                      <div class="outgoing_message"><b>You: </b>
+                    <% else %>
+                      <div class="incoming_message"><b><%= n.from.username %>:</b>
+                    <% end %>
+                      <%= n.text %></div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

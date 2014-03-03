@@ -1,0 +1,92 @@
+// GLOBAL VALUES
+// --------------------------------------------------
+
+
+// Grays
+// -------------------------
+$black:                 #000;
+$grayDarker:            #222;
+$grayDark:              #333;
+$gray:                  #555;
+$grayLight:             #999;
+$grayLighter:           #F5F5F5;
+$white:                 #fff;
+
+
+// Accent colors
+// -------------------------
+$blue:                  #3E78B3;
+$blueDark:              #033C73;
+$green:                 #73A839;
+$red:                   #C71C22;
+$yellow:                #F7B42C;
+$orange:                #DD5600;
+$pink:                  #F49AC1;
+$purple:                #9760B3;
+
+
+// Scaffolding
+// -------------------------
+$bodyBackground:        $white;
+$textColor:             $gray;
+
+
+// Links
+// -------------------------
+$linkColor:             #369BD7;
+$linkColorHover:        darken($linkColor, 15%);
+
+
+// Typography
+// -------------------------
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$baseFontSize:          13px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        18px;
+$altFontFamily:         $monoFontFamily;
+
+$headingsFontFamily:    $baseFontFamily; //'Telex', sans-serif; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    bold;    // instead of browser default, bold
+$headingsColor:         #317EAC; // empty to use BS default, $textColor
+
+
+// Tables
+// -------------------------
+$tableBackground:                   transparent; // overall background-color
+$tableBackgroundAccent:             #f9f9f9; // for striping
+$tableBackgroundHover:              #f5f5f5; // for hover
+$tableBorder:                       #ddd; // table and cell border
+
+// Forms
+// -------------------------
+$inputBackground:               $white;
+$inputBorder:                   #ccc;
+$inputBorderRadius:             3px;
+$inputDisabledBackground:       $grayLighter;
+$formActionsBackground:         #f5f5f5;
+
+// Dropdowns
+// -------------------------
+$dropdownBackground:            $white;
+$dropdownBorder:                rgba(0,0,0,.2);
+$dropdownLinkColor:             $grayDark;
+$dropdownLinkColorHover:        $white;
+$dropdownLinkBackgroundHover:   $linkColor;
+
+// KK_Display
+// -------------------------
+$kk-border-radius: 0px;
+$kk-rounded-border-radius: 5px;
+$kk-box-shadow: rgba(255,255,255,0.1) 0 1px 0, rgba(0, 0, 255, 0.1) 1px 1px 9px 0px inset;
+$kk-border: 1px solid #D4D4D4;
+$kk-border-radius-first-element: 5px 5px 0px 0px; 
+$kk-border-radius-last-element: 0px 0px 5px 5px;
+$kk-title-background: #349BD7;//linear-gradient(top, #61B0DF, #349BD7);
+$kk-element-padding: 10px;
+$kk-element-inner-shadow: inset 0px 5px 15px 2px rgba(0,0,0,0.2);
+
+
+$nice-border: 1px solid #dbdbdb;

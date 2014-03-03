@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="user_item_list kk_display span8 offset2">
+    <div class="element title">
+      <h3><%= t 'my_items' %></h3>
+    </div>
+
+    <div class="element element_padded" id="no_sale">
+      <h4><%= t 'you_are_selling_nothing' %></h4>
+    </div>
+
+    <%= render partial: "items/user_item", collection: @items %>
+  </div>
+</div>
